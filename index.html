@@ -4,17 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Canvasly — Présentations vivantes</title>
+
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#0b0b0f" />
+
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="polish.css" />
     <link rel="stylesheet" href="slides.css" />
     <link rel="stylesheet" href="slides-layout.css" />
   </head>
+
   <body>
     <div id="app"></div>
+
     <input id="image-input" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden />
     <input id="project-input" type="file" accept=".craftslides,application/json" hidden />
     <input id="pptx-input" type="file" accept=".pptx,application/vnd.openxmlformats-officedocument.presentationml.presentation" hidden />
+
     <script src="app.js"></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js");
+        });
+      }
+    </script>
   </body>
 </html>
