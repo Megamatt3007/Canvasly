@@ -1,1 +1,137 @@
-.home-return{width:auto!important;padding:0 11px!important;font-size:12px!important;font-weight:800!important;display:flex!important;gap:6px!important}.ppt-slides{width:266px!important;background:#f7f8fc}.ppt-slides .slides-head{padding:18px 19px 13px}.ppt-slides .slides-head:after{content:"Réorganisez par glisser-déposer";display:block;font-size:9px;letter-spacing:0;text-transform:none;font-weight:600;color:#a0a8bb;margin-top:4px}.ppt-slides .slide-list{padding:4px 17px 24px 38px}.ppt-slides .slide-thumb{width:100%;margin:0 0 13px;border:1px solid #dfe3ef;border-radius:7px;padding:4px;box-shadow:0 2px 6px rgba(32,38,68,.06);transition:.16s;cursor:grab}.ppt-slides .slide-thumb:hover{transform:translateY(-1px);box-shadow:0 7px 17px rgba(35,42,77,.12)}.ppt-slides .slide-thumb.active{border:2px solid #635bff;box-shadow:0 4px 15px rgba(99,91,255,.19)}.ppt-slides .slide-thumb.drag-over{border-color:#22a06b;transform:translateY(4px)}.ppt-slides .slide-thumb-num{left:-26px;top:50%;transform:translateY(-50%);font-weight:800;font-size:12px;color:#8e98ae}.ppt-slides .slide-thumb.active .slide-thumb-num{color:#635bff}.ppt-slides .thumb-canvas{border-radius:3px}.ppt-slides .slide-actions{position:absolute;right:6px;bottom:6px;display:none;gap:3px}.ppt-slides .slide-thumb:hover .slide-actions{display:flex}.ppt-slides .slide-actions button{width:25px;height:23px;border-radius:5px;background:#fff;color:#5e6780;font-size:14px;box-shadow:0 1px 4px #2c345322}.ppt-slides .slide-actions button:hover{background:#ecebff;color:#635bff}@media(max-width:900px){.ppt-slides{width:auto!important}.workspace{grid-template-columns:210px 1fr!important}}@media(max-width:620px){.home-return{font-size:0!important;padding:0 8px!important}.home-return:first-letter{font-size:17px}.ppt-slides{display:none}}
+.home-return{
+  width:auto!important;
+  padding:0 11px!important;
+  font-size:12px!important;
+  font-weight:800!important;
+  display:flex!important;
+  gap:6px!important;
+}
+
+.ppt-slides{
+  width:266px!important;
+  background:#f7f8fc;
+}
+
+.ppt-slides .slides-head{
+  padding:18px 19px 13px;
+}
+
+.ppt-slides .slides-head:after{
+  content:"Réorganisez par glisser-déposer";
+  display:block;
+  font-size:9px;
+  letter-spacing:0;
+  text-transform:none;
+  font-weight:600;
+  color:#a0a8bb;
+  margin-top:4px;
+}
+
+.ppt-slides .slide-list{
+  padding:4px 17px 24px 38px;
+}
+
+.ppt-slides .slide-thumb{
+  width:100%;
+  margin:0 0 13px;
+  border:1px solid #dfe3ef;
+  border-radius:7px;
+  padding:4px;
+  box-shadow:0 2px 6px rgba(32,38,68,.06);
+  transition:.16s;
+  cursor:grab;
+}
+
+.ppt-slides .slide-thumb:hover{
+  transform:translateY(-1px);
+  box-shadow:0 7px 17px rgba(35,42,77,.12);
+}
+
+.ppt-slides .slide-thumb.active{
+  border:2px solid #635bff;
+  box-shadow:0 4px 15px rgba(99,91,255,.19);
+}
+
+.ppt-slides .slide-thumb.drag-over{
+  border-color:#22a06b;
+  transform:translateY(4px);
+}
+
+.ppt-slides .slide-thumb-num{
+  left:-26px;
+  top:50%;
+  transform:translateY(-50%);
+  font-weight:800;
+  font-size:12px;
+  color:#8e98ae;
+}
+
+.ppt-slides .slide-thumb.active .slide-thumb-num{
+  color:#635bff;
+}
+
+.ppt-slides .thumb-canvas{
+  border-radius:3px;
+}
+
+.ppt-slides .slide-actions{
+  position:absolute;
+  right:6px;
+  bottom:6px;
+  display:none;
+  gap:3px;
+}
+
+.ppt-slides .slide-thumb:hover .slide-actions{
+  display:flex;
+}
+
+.ppt-slides .slide-actions button{
+  width:25px;
+  height:23px;
+  border-radius:5px;
+  background:#fff;
+  color:#5e6780;
+  font-size:14px;
+  box-shadow:0 1px 4px #2c345322;
+}
+
+.ppt-slides .slide-actions button:hover{
+  background:#ecebff;
+  color:#635bff;
+}
+
+/* Tablet */
+@media(max-width:900px){
+  .ppt-slides{
+    width:auto!important;
+  }
+
+  .workspace{
+    grid-template-columns:210px 1fr!important;
+  }
+}
+
+/* Téléphone */
+@media(max-width:620px){
+  .home-return{
+    font-size:0!important;
+    padding:0 8px!important;
+  }
+
+  .home-return:first-letter{
+    font-size:17px;
+  }
+
+  .ppt-slides{
+    display:none;
+  }
+
+  /*
+   * Le panneau des slides est masqué sur téléphone.
+   * Il ne doit donc plus réserver ses 210px.
+   */
+  .workspace{
+    grid-template-columns:1fr!important;
+  }
+}
