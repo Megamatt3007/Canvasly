@@ -217,7 +217,10 @@
     grid-template-rows:minmax(0,1fr) 96px!important;
     width:100%!important;
     min-width:0!important;
-    overflow:hidden!important;
+    min-height:0!important;
+    overflow:auto!important;
+    -webkit-overflow-scrolling:touch!important;
+    overscroll-behavior:contain!important;
   }
 
 
@@ -231,7 +234,7 @@
     width:100%!important;
     min-width:0!important;
     min-height:0!important;
-    overflow:hidden!important;
+    overflow:visible!important;
   }
 
   .stage-wrap{
@@ -240,6 +243,9 @@
     min-height:0!important;
     padding:10px!important;
     overflow:auto!important;
+    -webkit-overflow-scrolling:touch!important;
+    touch-action:pan-x pan-y!important;
+    overscroll-behavior:contain!important;
   }
 
   .stage{
