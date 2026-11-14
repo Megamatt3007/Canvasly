@@ -1,21 +1,341 @@
-:root{--bg:#f5f6fa;--panel:#ffffff;--ink:#17203a;--muted:#71809a;--line:#e6e9f1;--accent:#635bff;--accent-soft:#ecebff;--shadow:0 16px 45px rgba(30,37,65,.10)}\*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}button{font:inherit;border:0;cursor:pointer;color:inherit}.app{height:100vh;display:grid;grid-template-rows:64px 1fr}.topbar{background:rgba(255,255,255,.91);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 22px;gap:22px;z-index:5}.brand{font-size:20px;font-weight:800;letter-spacing:-.8px;display:flex;align-items:center;gap:9px}.brand-mark{width:27px;height:27px;border-radius:9px;background:linear-gradient(135deg,#786fff,#4c44d9);position:relative}.brand-mark:after{content:"";position:absolute;inset:7px;border:2px solid white;border-radius:5px}.document-name{border:1px solid transparent;background:transparent;padding:8px;border-radius:8px;font-weight:600}.document-name:hover{border-color:var(--line);background:#fff}.top-actions{display:flex;gap:5px;margin-left:auto}.icon-btn,.tool-btn{width:36px;height:36px;border-radius:10px;background:transparent;display:grid;place-items:center;font-size:17px}.icon-btn:hover,.tool-btn:hover{background:#f0f1f7}.primary{background:var(--accent);color:#fff;border-radius:10px;padding:10px 15px;font-weight:700;display:flex;align-items:center;gap:8px}.primary:hover{background:#5149e8}.workspace{min-height:0;display:grid;grid-template-columns:236px 1fr 250px}.slides-panel,.inspector{background:var(--panel);border-right:1px solid var(--line);overflow:auto}.slides-head{padding:21px 18px 14px;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.add-slide{border-radius:8px;width:28px;height:28px;background:var(--accent-soft);color:var(--accent);font-size:21px}.slide-list{padding:0 14px 28px}.slide-thumb{position:relative;aspect-ratio:16/9;border:2px solid transparent;border-radius:10px;margin:0 0 14px;padding:5px;background:#fff;box-shadow:0 3px 11px rgba(35,40,70,.08);cursor:pointer}.slide-thumb.active{border-color:var(--accent);box-shadow:0 4px 14px rgba(99,91,255,.25)}.slide-thumb-num{position:absolute;left:-22px;top:4px;font-size:11px;color:var(--muted)}.thumb-canvas{width:100%;height:100%;background:#fff;border-radius:5px;overflow:hidden;position:relative}.thumb-object{position:absolute;transform-origin:top left;white-space:pre-wrap;overflow:hidden}.canvas-area{min-width:0;display:flex;flex-direction:column;background:radial-gradient(#dfe2eb 1px,transparent 1px);background-size:18px 18px}.editor-tools{height:62px;background:rgba(250,251,254,.89);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:3px}.tool-btn.active{background:var(--accent-soft);color:var(--accent)}.tool-divider{width:1px;height:24px;background:var(--line);margin:0 7px}.stage-wrap{flex:1;min-height:0;display:grid;place-items:center;padding:28px;overflow:auto}.stage{width:min(100%,1067px);aspect-ratio:16/9;background:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden;touch-action:none}.slide-object{position:absolute;user-select:none;touch-action:none;cursor:move;min-width:20px}.slide-object.selected{outline:2px solid var(--accent);outline-offset:3px}.slide-object.text{font-weight:500;line-height:1.18;white-space:pre-wrap;cursor:text}.slide-object.shape{border:2px solid #17203a;background:#e7e9ff}.slide-object.ellipse{border-radius:50%}.slide-object.line{height:3px!important;background:#17203a;border:0;transform-origin:left center}.slide-object.image img{width:100%;height:100%;object-fit:contain;pointer-events:none}.resize-handle{position:absolute;width:11px;height:11px;border:2px solid #fff;border-radius:50%;background:var(--accent);right:-7px;bottom:-7px;cursor:nwse-resize}.empty-hint{position:absolute;inset:0;display:grid;place-items:center;color:#a9b1c4;font-size:16px;pointer-events:none}.inspector{border-right:0;border-left:1px solid var(--line);padding:19px}.panel-title{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;margin:2px 0 20px}.prop{margin:15px 0}.prop label{display:block;font-size:12px;color:var(--muted);font-weight:700;margin-bottom:7px}.prop input,.prop select{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px;background:#fff;color:var(--ink)}.color-row{display:flex;gap:8px}.color-row button{width:27px;height:27px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px #d8dcea}.color-row button.active{box-shadow:0 0 0 2px var(--accent)}.tip{margin-top:26px;background:#f7f7fc;border-radius:12px;padding:13px;font-size:12px;line-height:1.55;color:#65708a}.tip strong{color:var(--ink)}.present{position:fixed;inset:0;background:#0d1020;color:#fff;z-index:20;display:flex;align-items:center;justify-content:center}.present.hidden{display:none}.present-slide{width:min(100vw,calc(100vh \* 1.7777));aspect-ratio:16/9;position:relative;background:#fff;overflow:hidden;touch-action:none}.present-slide .slide-object{color:var(--ink)}.annotation-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}.present-top{position:fixed;top:18px;left:22px;right:22px;display:flex;justify-content:space-between;opacity:.15;transition:.2s}.present:hover .present-top{opacity:1}.present-exit{background:rgba(255,255,255,.14);color:#fff;border-radius:9px;padding:9px 13px}.slide-counter{background:rgba(0,0,0,.34);padding:8px 11px;border-radius:8px;font-size:13px}.annotation-bar{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);display:flex;gap:5px;align-items:center;background:rgba(27,31,52,.86);backdrop-filter:blur(16px);padding:8px;border:1px solid rgba(255,255,255,.15);border-radius:15px;box-shadow:0 15px 35px rgba(0,0,0,.3);transition:.2s}.annotation-bar button{color:#e6e8f5;background:transparent;width:39px;height:39px;border-radius:10px;font-size:17px}.annotation-bar button.active{background:var(--accent);color:#fff}.annotation-bar .swatch{width:20px;height:20px;border-radius:50%;margin:0 4px;cursor:pointer;border:2px solid rgba(255,255,255,.8)}.annotation-bar input{width:75px;accent-color:#8f89ff}.screen-cover{position:fixed;inset:0;z-index:30;background:#000}.screen-cover.white{background:#fff}.hidden{display:none!important}@media(max-width:900px){.inspector{display:none}.workspace{grid-template-columns:190px 1fr}}@media(max-width:620px){.topbar{padding:0 12px;gap:6px}.document-name{display:none}.brand{font-size:17px}.primary{padding:9px}.primary span{display:none}.top-actions .icon-btn{display:grid}.stage-wrap{padding:10px}.editor-tools{overflow-x:auto;overflow-y:hidden;justify-content:flex-start;padding:0 8px;flex-shrink:0}.workspace{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}.canvas-area{grid-column:1;grid-row:1;min-width:0;min-height:0}.slides-panel{display:block;grid-column:1;grid-row:2;width:100%;height:96px;min-height:96px;border-right:0;border-top:1px solid var(--line);overflow:hidden}.slides-head{display:none}.slide-list{display:flex;gap:10px;overflow-x:auto;overflow-y:hidden;padding:10px 12px;height:100%;align-items:center}.slide-thumb{flex:0 0 110px;width:110px;height:auto;margin:0;padding:4px}.slide-thumb-num{left:4px;top:4px;background:rgba(255,255,255,.9);border-radius:5px;padding:2px 4px;z-index:2}.thumb-canvas{width:100%;height:100%}}
-/\* Responsive document scrolling on the home screen. The editor keeps its own workspace scrolling. */
-html:has(.home), body:has(.home){
-min-height:100%;
-height:auto;
+:root{
+  --bg:#f4f5f8;
+  --panel:#ffffff;
+  --line:#e5e7ef;
+  --text:#20243a;
+  --muted:#7d8499;
+  --accent:#635bff;
+  --accent-soft:#ecebff;
+  --shadow:0 10px 30px rgba(30,35,70,.08);
 }
-body:has(.home){
-overflow-x:hidden;
-overflow-y:auto;
--webkit-overflow-scrolling:touch;
-overscroll-behavior-y:auto;
+
+*{
+  box-sizing:border-box;
 }
-@media (pointer:coarse){
-button, [role="button"]{
--webkit-tap-highlight-color:transparent;
+
+html,
+body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
 }
+
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow:hidden;
 }
-@supports not selector(:has(*)){
-/\* Safari/iOS versions without :has still get a scrollable home through .home itself. \*/
-.home{overflow-y:auto;-webkit-overflow-scrolling:touch;}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+}
+
+#app{
+  width:100%;
+  height:100%;
+}
+
+/* =========================
+   APP
+   ========================= */
+
+.app{
+  height:100vh;
+  display:grid;
+  grid-template-rows:64px 1fr;
+  min-width:0;
+}
+
+/* =========================
+   TOPBAR
+   ========================= */
+
+.topbar{
+  height:64px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:0 18px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  z-index:20;
+}
+
+.brand{
+  font-size:18px;
+  font-weight:850;
+  letter-spacing:-.02em;
+  color:var(--text);
+  white-space:nowrap;
+}
+
+.document-name{
+  min-width:0;
+  flex:1;
+  color:#626a80;
+  font-size:13px;
+  font-weight:650;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-left:auto;
+}
+
+.icon-btn{
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:9px;
+  background:#f4f5f9;
+  color:#5e6780;
+  font-size:17px;
+  font-weight:750;
+  transition:.15s;
+}
+
+.icon-btn:hover{
+  background:var(--accent-soft);
+  color:var(--accent);
+}
+
+.primary{
+  min-height:36px;
+  padding:0 14px;
+  border-radius:9px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:800;
+  box-shadow:0 5px 14px rgba(99,91,255,.2);
+}
+
+.primary:hover{
+  filter:brightness(.97);
+}
+
+/* =========================
+   WORKSPACE
+   ========================= */
+
+.workspace{
+  min-height:0;
+  display:grid;
+  grid-template-columns:266px minmax(0,1fr) 280px;
+  overflow:hidden;
+}
+
+.slides-panel{
+  min-width:0;
+  min-height:0;
+  background:#f7f8fc;
+  border-right:1px solid var(--line);
+  overflow:hidden;
+}
+
+.canvas-area{
+  min-width:0;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.inspector{
+  min-width:0;
+  min-height:0;
+  background:#fff;
+  border-left:1px solid var(--line);
+  overflow:auto;
+}
+
+/* =========================
+   EDITOR TOOLS
+   ========================= */
+
+.editor-tools{
+  min-height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:0 12px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  overflow:auto;
+}
+
+.editor-tools button{
+  flex:0 0 auto;
+}
+
+/* =========================
+   STAGE
+   ========================= */
+
+.stage-wrap{
+  flex:1;
+  min-width:0;
+  min-height:0;
+  padding:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:auto;
+}
+
+.stage{
+  flex:0 0 auto;
+  position:relative;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+/* =========================
+   HOME / GENERAL
+   ========================= */
+
+.home-return{
+  width:auto!important;
+  padding:0 11px!important;
+  font-size:12px!important;
+  font-weight:800!important;
+  display:flex!important;
+  gap:6px!important;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media(max-width:900px){
+
+  .inspector{
+    display:none;
+  }
+
+  .workspace{
+    grid-template-columns:210px minmax(0,1fr);
+  }
+
+  /*
+   * IMPORTANT :
+   * On garde les boutons Accueil / Nouveau projet visibles.
+   * L'ancienne règle qui masquait les 2 premiers boutons
+   * supprimait notamment le bouton Accueil.
+   */
+  .top-actions .icon-btn{
+    display:flex;
+  }
+
+  .top-actions .icon-btn:nth-child(-n+2){
+    display:flex;
+  }
+
+  .top-actions{
+    gap:5px;
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:620px){
+
+  .app{
+    grid-template-rows:56px 1fr;
+  }
+
+  .topbar{
+    height:56px;
+    padding:0 12px;
+    gap:6px;
+  }
+
+  .brand{
+    font-size:17px;
+  }
+
+  .document-name{
+    display:none;
+  }
+
+  .top-actions{
+    gap:4px;
+  }
+
+  /*
+   * Accueil et Nouveau projet restent visibles
+   * sur mobile.
+   */
+  .top-actions .icon-btn{
+    display:flex!important;
+  }
+
+  .home-return{
+    font-size:0!important;
+    padding:0 8px!important;
+  }
+
+  .home-return:first-letter{
+    font-size:17px;
+  }
+
+  .primary{
+    min-height:34px;
+    padding:0 10px;
+  }
+
+  .primary span{
+    display:none;
+  }
+
+  /*
+   * Workspace mobile :
+   * une seule colonne + barre de miniatures en bas.
+   */
+  .workspace{
+    grid-template-columns:1fr!important;
+    grid-template-rows:minmax(0,1fr) 96px!important;
+  }
+
+  .canvas-area{
+    grid-column:1!important;
+    grid-row:1!important;
+    min-width:0!important;
+    min-height:0!important;
+  }
+
+  .slides-panel{
+    grid-column:1!important;
+    grid-row:2!important;
+    min-width:0!important;
+    min-height:0!important;
+  }
+
+  .stage-wrap{
+    padding:10px;
+  }
+
+  .editor-tools{
+    justify-content:flex-start;
+    padding:0 8px;
+  }
 }
