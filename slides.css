@@ -7,6 +7,11 @@
   gap:6px!important;
 }
 
+
+/* =========================
+   SLIDES PANEL
+   ========================= */
+
 .ppt-slides{
   width:266px!important;
   background:#f7f8fc;
@@ -107,12 +112,31 @@
    ========================= */
 
 @media(max-width:900px){
+
   .ppt-slides{
     width:auto!important;
   }
 
   .workspace{
     grid-template-columns:210px 1fr!important;
+  }
+
+  /*
+   * Header :
+   * tous les boutons restent accessibles.
+   */
+  .top-actions{
+    gap:5px!important;
+    flex-shrink:1!important;
+    min-width:0!important;
+  }
+
+  .top-actions .icon-btn{
+    flex:0 0 36px!important;
+  }
+
+  .top-actions .primary{
+    flex:0 0 auto!important;
   }
 }
 
@@ -123,36 +147,133 @@
 
 @media(max-width:620px){
 
-  /* Bouton Accueil */
-  .home-return{
-    font-size:0!important;
-    padding:0 8px!important;
+  /*
+   * HEADER
+   *
+   * Le problème venait du fait que le header
+   * essayait de faire tenir trop de boutons
+   * sur une largeur de téléphone.
+   */
+
+  .topbar{
+    min-width:0!important;
+    width:100%!important;
+    overflow:hidden!important;
   }
 
-  .home-return:first-letter{
-    font-size:17px;
+  .topbar .brand{
+    flex:0 0 auto!important;
+    min-width:0!important;
+  }
+
+  .top-actions{
+    margin-left:auto!important;
+    min-width:0!important;
+    flex:1 1 auto!important;
+    justify-content:flex-end!important;
+    overflow:hidden!important;
+  }
+
+  .top-actions .icon-btn{
+    width:34px!important;
+    min-width:34px!important;
+    max-width:34px!important;
+    height:34px!important;
+    flex:0 0 34px!important;
+    padding:0!important;
+  }
+
+  /*
+   * Le bouton Présenter garde sa place,
+   * mais devient uniquement l'icône ▶.
+   */
+  .top-actions .primary{
+    min-width:34px!important;
+    width:34px!important;
+    height:34px!important;
+    padding:0!important;
+    flex:0 0 34px!important;
+  }
+
+  .top-actions .primary span{
+    display:none!important;
+  }
+
+  /*
+   * On ne laisse pas le nom du document
+   * pousser les boutons hors écran.
+   */
+  .document-name{
+    display:none!important;
   }
 
 
-  /* Workspace mobile en une seule colonne */
+  /* =========================
+     WORKSPACE
+     ========================= */
+
   .workspace{
     grid-template-columns:1fr!important;
-    grid-template-rows:minmax(0,1fr) auto!important;
+    grid-template-rows:minmax(0,1fr) 96px!important;
+    width:100%!important;
+    min-width:0!important;
+    overflow:hidden!important;
   }
 
 
-  /* Zone de travail */
+  /* =========================
+     CANVAS
+     ========================= */
+
   .canvas-area{
     grid-column:1!important;
     grid-row:1!important;
+    width:100%!important;
     min-width:0!important;
     min-height:0!important;
+    overflow:hidden!important;
+  }
+
+  .stage-wrap{
+    width:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    padding:10px!important;
+    overflow:auto!important;
+  }
+
+  .stage{
+    max-width:100%!important;
   }
 
 
-  /* Barre des miniatures */
+  /* =========================
+     TOOLBAR
+     ========================= */
+
+  .editor-tools{
+    width:100%!important;
+    min-width:0!important;
+    justify-content:flex-start!important;
+    padding:0 8px!important;
+    gap:5px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    flex-shrink:0!important;
+  }
+
+  .editor-tools .tool-btn{
+    flex:0 0 auto!important;
+  }
+
+
+  /* =========================
+     SLIDES
+     ========================= */
+
   .ppt-slides{
     display:block!important;
+
     grid-column:1!important;
     grid-row:2!important;
 
@@ -167,14 +288,15 @@
     background:#f7f8fc!important;
   }
 
-
-  /* On retire le titre "Slides" */
   .ppt-slides .slides-head{
     display:none!important;
   }
 
 
-  /* Liste horizontale */
+  /* =========================
+     HORIZONTAL SLIDE LIST
+     ========================= */
+
   .ppt-slides .slide-list{
     display:flex!important;
     flex-direction:row!important;
@@ -190,15 +312,18 @@
     overflow-x:auto!important;
     overflow-y:hidden!important;
 
-    scrollbar-width:none;
+    scrollbar-width:none!important;
   }
 
   .ppt-slides .slide-list::-webkit-scrollbar{
-    display:none;
+    display:none!important;
   }
 
 
-  /* Miniatures */
+  /* =========================
+     THUMBNAILS
+     ========================= */
+
   .ppt-slides .slide-thumb{
     flex:0 0 110px!important;
 
@@ -211,8 +336,6 @@
     border-radius:7px!important;
   }
 
-
-  /* Numéro de slide */
   .ppt-slides .slide-thumb-num{
     left:4px!important;
     top:4px!important;
@@ -227,16 +350,48 @@
     z-index:2;
   }
 
-
-  /* Canvas de miniature */
   .ppt-slides .thumb-canvas{
     width:100%!important;
     height:100%!important;
   }
 
-
-  /* Les boutons d'action restent accessibles sans hover */
   .ppt-slides .slide-actions{
-    display:none;
+    display:none!important;
+  }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+   ========================= */
+
+@media(max-width:390px){
+
+  .topbar{
+    padding-left:8px!important;
+    padding-right:8px!important;
+    gap:4px!important;
+  }
+
+  .brand{
+    font-size:16px!important;
+  }
+
+  .top-actions{
+    gap:3px!important;
+  }
+
+  .top-actions .icon-btn{
+    width:31px!important;
+    min-width:31px!important;
+    max-width:31px!important;
+    height:31px!important;
+    font-size:15px!important;
+  }
+
+  .top-actions .primary{
+    width:31px!important;
+    min-width:31px!important;
+    height:31px!important;
   }
 }
